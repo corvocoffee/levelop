@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <meta name = "author" content = "D. Kovács">
+    <meta name = "description" content = "levelop - graphic design portfolio website">
+
+    <title>levelop</title>
+    <link rel = "stylesheet" href = "levelop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.min.js">
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#myform").validate({
+            rules: {
+                name: "required",
+                phone: {
+                    required: true,
+                    maxlength: 12,
+                    minlength: 11
+                },
+
+                email: {
+                    required: true,
+                    email: true
+                },
+            },
+
+            messages: {
+                name: " Write your name here!",
+                phone: " Write a valid phone number here!",
+                email: " Write your email address here!",
+            },
+        });
+      });
+        </script>
+    
+</head>
+<body>
+    <nav>
+        <ul id = "navlist"> 
+            <li><a href="index.html">Home</a></li>
+            <li id="current"></id><a href="#">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="logos.html">Logos</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+    </nav>
+    <br>
+
+    <div> 
+        <h1> Levelop... </h1>
+    </div>
+<div class = "container">
+    <article> 
+        <p> The winds are changing in design. Ambitious freelancers have an edge over pricey studios. AI is a great tool for simple tasks, but if you are looking for designs that get your brand recognised, you are in the right place.</p>
+
+        <p> I am self-taught graphic designer. For me, this is more than a side hustle, it's a passion project. Colors are my favourite. They grab our attention and have the power to influence our emotions. Whereas creativity and the ability to think outside the box can truly set an individual or a brand apart.</p>
+
+        <p> My mission is to create a complex vidual brand identity for brands, reflective of their goals, value and desired costumers. So much more than a simple logo design, I can create brand recognision on multiple platforms and in office setting as well, with social media templates, stationary kit design and brand style guides.</p>
+
+        <p> For more information you can visit my freelancer page on Fiverr:  https://www.fiverr.com/levelop</p>
+
+    </article>
+
+     <div class = "row2">
+        <aside>
+        <h3> Graphic design </h3>
+        <p> Graphic design is the art of visually communicating ideas, messages, and stories through creative layouts, colors, and imagery. It blends artistry with functionality, ensuring designs are both visually stunning and effective in conveying the intended message. From digital media to print, graphic design plays a crucial role in shaping how brands and ideas connect with their audience.</p>
+
+    </aside>
+    <aside>
+        <h3> Brand Identity Design</h3>
+        Brand identity design involves creating a cohesive visual system that embodies a brand's essence, values, and personality. This includes designing logos, color palettes, typography, and other elements that ensure consistent representation across all platforms. A strong brand identity establishes trust and recognition, making it a cornerstone of effective branding.
+    
+    </aside>
+    </div>
+    <article class = "form"> 
+        <h2 class = "form_title">Get a quote</h2>
+
+        <form method = "post" id = "myform" action = "https://corvocoffee.github.io/levelop/receive.php" novalidate> 
+            <label for = "name">Name: <input type = "text" name = "name" id = "name"></label><br>
+            <label for = "phone">Phone: + <input type = "tel" name = "phone" id = "phone" pattern="[0-9]{2}-[0-9]{2}-[0-9]{3}-[0-9]{4}"></label><br>
+            <label for = "email">Email: <input type = "email" name = "email" id = "email"></label><br>  
+            
+            Requested services: <br>
+
+            <label for = "logo"><input type="checkbox" id = "logo" name="logo">Logo design</label><br>
+
+            <label for = "bcard"><input type="checkbox" id = "bcard" name="bcard">Business card</label><br>
+
+            <label for = "kit"><input type="checkbox" id = "kit" name="kit">Stationery kit</label><br>
+
+            <label for = "site"><input type="checkbox" id = "site" name="site"> Website</label><br>
+
+            <label for = "media"><input type="checkbox" id = "media" name="media">Social media templates</label><br>
+
+            <label for = "branding"><input type="checkbox" id = "branding" name="branding"> Branding & Style guides</label><br> 
+
+
+            Styles:<br>
+            <select name = "style[modern, minimal, industrial, retro, colorful, botanical, icon, text only]"  size = "8">
+                <label for = "modern"><option id = "modern" name = "modern"> Modern </option></label>
+                <label for = "minimalist"><option id = "minimalist" name = "minimalist"> Minimalist </option></label>
+                <label for = "industrial"><option id = "industrial" name = "industrial"> Industrial </option></label>
+                <label for = "retro"><option id = "retro" name = "retro"> Retro </option></label>
+                <label for = "colorful"><option id = "colorful" name = "colorful"> Colorful</option></label>
+                <label for = "botanical"><option id = "botanical" name = "botanical"> Botanical</option></label>
+                <label for = "icon"><option id = "icon" name = "icon"> Icon</option></label>
+                <label for = "text_only"><option id = "text_only" name = "text_only">Text only</option></label>
+            </select>
+
+            <br>Preferred colors:<br>
+            <table>
+                <tr>
+                    <input type = "color" name = "color_1" id = "color_1">
+                    <input type = "color" name = "color_2" id = "color_2">
+                    <input type = "color" name = "color_3" id = "color_3">
+                </tr>
+            </table>
+
+            Comments: <br>
+            <label for = "comment"><textarea name = "comment" id = "comment"></textarea></label><br>
+
+            <input class = "button" type = "button" id = "quote_button" value = "Get quote">  
+            <input class = "button" type = "submit" id = "submit" value = "Send request">    
+            <input type = "textbox" type = "text" id = "price" name = "price"> 
+
+
+        </form> 
+
+    </article>
+</div>
+<script src = "levelop.js"> </script>
+</body>
+</html>
